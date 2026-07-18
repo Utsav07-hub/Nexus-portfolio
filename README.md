@@ -4,7 +4,7 @@ A modern, responsive, and typography-first personal portfolio built to showcase 
 
 ## 🚀 Live Demo
 
-**Portfolio:** https://your-vercel-url.vercel.app
+**Portfolio:** nexus-portfolio-iota.vercel.app
 
 > Replace the above URL after deployment.
 
