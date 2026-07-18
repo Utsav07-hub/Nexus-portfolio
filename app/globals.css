@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Grayscale scale — the backbone of the design system. */
+    --color-background: 10 10 11; /* #0A0A0B */
+    --color-foreground: 250 250 250; /* #FAFAFA */
+    --color-surface: 20 20 22; /* #141416 */
+    --color-muted: 24 24 27; /* #18181B */
+    --color-muted-foreground: 161 161 170; /* #A1A1AA */
+    --color-border: 39 39 42; /* #27272A */
+
+    /* Single accent color — a warm, muted clay tone. Used sparingly. */
+    --color-accent: 217 119 87; /* #D97757 */
+    --color-accent-foreground: 250 250 250;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  ::selection {
+    @apply bg-accent/25 text-foreground;
+  }
+
+  /* Quiet, minimal scrollbar — no jarring native styling. */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-border;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/40;
+  }
+
+  /* Consistent, visible focus states everywhere — accessibility first. */
+  :focus-visible {
+    outline: 2px solid rgb(var(--color-accent));
+    outline-offset: 2px;
+  }
+
+  /* Keeps anchor-linked sections from landing underneath the sticky navbar. */
+  section[id] {
+    scroll-margin-top: 5rem;
+  }
+}
+
+@layer base {
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
