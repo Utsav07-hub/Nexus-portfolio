@@ -6,8 +6,6 @@ A modern, responsive, and typography-first personal portfolio built to showcase 
 
 **Portfolio:** nexus-portfolio-iota.vercel.app
 
-> Replace the above URL after deployment.
-
 ---
 
 ## 📸 Preview
